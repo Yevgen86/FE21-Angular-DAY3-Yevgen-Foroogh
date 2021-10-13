@@ -1,0 +1,23 @@
+
+
+<h2 class="text-center my-5">Products</h2>
+
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let product of products ; index as productId">
+        <!-- index will refer to the index of the element, productId is just a parameter name that you can change if you want, but
+        you need to change it in the app.routing.module.ts -->
+        <a routerLink="products/{{productId}}" class="text-decoration-none">
+        <figure class="figure">
+            <img src="{{ product.image }}" class="figure-img img-fluid rounded" alt="{{product.name}}">
+            <figcaption class="figure-caption text-end" *ngIf="product.description">
+                {{ product.description }}
+            </figcaption>
+          </figure>
+        </a>
+        <h3>
+                {{ product.name }}
+        </h3>
+    </div>
+</div>
+
